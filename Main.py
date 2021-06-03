@@ -36,12 +36,12 @@ async def on_ready():
 
 @client.command()
 @commands.is_owner()
-async def 𝐁𝐨𝐭_𝐒𝐭𝐨𝐩(ctx):
+async def Stop (ctx):
     await ctx.bot.logout()
     print (Fore.GREEN + f"{client.user.name} has logged out successfully." + Fore.RESET)
 
 @client.command()
-async def 𝐁𝐨𝐭_𝐍𝐮𝐤𝐞(ctx):
+async def Nuke (ctx):
     await ctx.message.delete()
     guild = ctx.guild
     try:
