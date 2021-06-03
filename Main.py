@@ -26,6 +26,11 @@ async def on_ready():
  /$$  \ $$| $$_____/| $$  | $$  | $$ /$$| $$
 |  $$$$$$/|  $$$$$$$| $$  | $$  |  $$$$/| $$
  \______/  \_______/|__/  |__/   \___/  |__/
+  
+  
+  
+  Please type .Nuke in the discord chat to begin the wizzing 
+
  ''')
    await client.change_presence(activity=discord.Game(name="𝐁𝐨𝐭_𝐒𝐭𝐚𝐭𝐮𝐬"))
 
