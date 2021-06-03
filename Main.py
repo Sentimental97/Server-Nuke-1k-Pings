@@ -5,13 +5,13 @@ from discord import Permissions
 from colorama import Fore, Style
 import asyncio
 
-token = "ODQ5NzU4MDM3NTgwODQwOTYw.YLf01w.MDF9CQi4fB1bdbd7zUsLRVl7KC8"
+token = "UR TOKEN"
 
 
-SPAM_CHANNEL =  ["Stupid Faggots"]
-SPAM_MESSAGE = ["@everyone Senti says hi!"]
+SPAM_CHANNEL =  ["UR MESSAGE FOR THE CHANNELS"]
+SPAM_MESSAGE = ["@everyone UR MESSAGE FOR THE SPAM MESSAGE"]
 
-client = commands.Bot(command_prefix=".")
+client = commands.Bot(command_prefix="UR PREFIX")
 
 
 @client.event
